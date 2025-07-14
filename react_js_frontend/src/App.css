@@ -58,6 +58,137 @@
   transition: color 0.3s ease;
 }
 
+/* --- Tic Tac Toe Minimal UI --- */
+
+.ttt-title {
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.ttt-status {
+  margin: 1.2rem 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-height: 2rem;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0.8rem auto;
+}
+
+.ttt-square {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 2.1rem;
+  font-family: inherit;
+  font-weight: bold;
+  box-sizing: border-box;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.18s, box-shadow 0.18s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ttt-square.active:focus,
+.ttt-square.active:hover {
+  background: #f2faff;
+  border-color: var(--text-secondary);
+}
+
+.ttt-square[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ttt-controls {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ttt-restart-btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 7px;
+  padding: 0.6em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.15s;
+  box-shadow: 0 1px 4px rgba(79, 142, 247, 0.13);
+}
+.ttt-restart-btn:hover, .ttt-restart-btn:focus {
+  background: #296be5;
+  transform: translateY(-1px) scale(1.03);
+}
+
+.ttt-history {
+  margin: 0.7rem 0 0 0;
+  text-align: left;
+}
+
+.ttt-history ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.ttt-move-btn {
+  background: transparent;
+  color: var(--primary, #4F8EF7);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background 0.17s, color 0.13s;
+}
+.ttt-move-btn:hover, .ttt-move-btn.current {
+  background: var(--primary, #4F8EF7);
+  color: #fff;
+  border: 1px solid var(--primary, #4F8EF7);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 18vw);
+    grid-template-rows: repeat(3, 18vw);
+    gap: 3vw;
+  }
+  .ttt-square {
+    width: 18vw;
+    height: 18vw;
+    font-size: 6vw;
+  }
+  .ttt-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- End Tic Tac Toe UI --- */
+
 .theme-toggle {
   position: absolute;
   top: 20px;
